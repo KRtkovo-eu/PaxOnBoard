@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace PaxOnBoard
 {
-    static class Program
+    static class ApplicationInit
     {
         /// <summary>
         /// The main entry point for the application.
@@ -16,7 +16,7 @@ namespace PaxOnBoard
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new ManagerWindow());
         }
     }
 }
