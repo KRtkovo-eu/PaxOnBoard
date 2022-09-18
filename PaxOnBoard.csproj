@@ -39,7 +39,7 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>a7pgz-ka96w-001.ico</ApplicationIcon>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -73,17 +73,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\LegacyHelper.cs" />
-    <Compile Include="Lang\en_US.cs" />
-    <Compile Include="ManagerWindow.cs">
+    <Compile Include="Forms\AboutWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerWindow.Designer.cs">
+    <Compile Include="Forms\AboutWindow.Designer.cs">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AppHelper.cs" />
+    <Compile Include="Helpers\LegacyHelper.cs" />
+    <Compile Include="Lang\Translation.cs" />
+    <Compile Include="Lang\en_US.cs" />
+    <Compile Include="Lang\Language.cs" />
+    <Compile Include="Forms\ManagerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagerWindow.Designer.cs">
       <DependentUpon>ManagerWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationInit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ManagerWindow.resx">
+    <EmbeddedResource Include="Forms\AboutWindow.resx">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagerWindow.resx">
       <DependentUpon>ManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -111,14 +123,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="a7pgz-ka96w-001.ico" />
-    <None Include="misc\status\steam_on.png" />
-    <None Include="misc\status\steam_off.png" />
-    <None Include="misc\status\msstore_on.png" />
-    <None Include="misc\status\msstore_off.png" />
-    <None Include="misc\status\status_ok.png" />
-    <None Include="misc\status\status_off.png" />
-    <None Include="misc\status\status_error.png" />
+    <Content Include="favicon.ico" />
+    <None Include="Misc\status\steam_on.png" />
+    <None Include="Misc\status\steam_off.png" />
+    <None Include="Misc\status\msstore_on.png" />
+    <None Include="Misc\status\msstore_off.png" />
+    <None Include="Misc\status\status_ok.png" />
+    <None Include="Misc\status\status_off.png" />
+    <None Include="Misc\status\status_error.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SimConnectHelperNet47\SimConnectHelper.csproj">

@@ -3,13 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="ManagerFormSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">800, 500</Value>
+      <Value Profile="(Default)">965, 550</Value>
     </Setting>
     <Setting Name="ManagerFormLocation" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
     <Setting Name="ManagerFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
       <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="UserLanguage" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

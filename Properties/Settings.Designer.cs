@@ -25,7 +25,7 @@ namespace PaxOnBoard.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("800, 500")]
+        [global::System.Configuration.DefaultSettingValueAttribute("965, 550")]
         public global::System.Drawing.Size ManagerFormSize {
             get {
                 return ((global::System.Drawing.Size)(this["ManagerFormSize"]));
@@ -37,7 +37,7 @@ namespace PaxOnBoard.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point ManagerFormLocation {
             get {
                 return ((global::System.Drawing.Point)(this["ManagerFormLocation"]));
@@ -56,6 +56,18 @@ namespace PaxOnBoard.Properties {
             }
             set {
                 this["ManagerFormWindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int UserLanguage {
+            get {
+                return ((int)(this["UserLanguage"]));
+            }
+            set {
+                this["UserLanguage"] = value;
             }
         }
     }
