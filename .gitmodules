@@ -1,0 +1,3 @@
+[submodule "SimConnectHelper"]
+	path = SimConnectHelper
+	url = https://github.com/KRtkovo-eu/SimConnectHelper.git
