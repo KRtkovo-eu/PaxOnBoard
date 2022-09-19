@@ -54,7 +54,7 @@ a:link, a:visited, a:hover {
 }
 
 #bgImage0, #bgImage1 {
-    background: url("images/Midjourney/big/KRtekTM_airport_runway_and_terminal_with_gates_cyberpunk_neon_c_76403daa-dd62-4733-8866-694308094ce1.png") no-repeat center center fixed; 
+    background: url("../Misc/Midjourney/big/KRtekTM_airport_runway_and_terminal_with_gates_cyberpunk_neon_c_76403daa-dd62-4733-8866-694308094ce1.png") no-repeat center center fixed; 
     position: absolute;
     top: 0;
     left: 0;
@@ -136,6 +136,10 @@ div.blurred {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     margin-top: 0;
+}
+
+#innerContainer div.block {
+    margin: 0 0 3em 0;
 }
 
 #footer {
