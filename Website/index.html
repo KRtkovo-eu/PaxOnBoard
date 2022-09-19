@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ondřej Kotas, KRtkovo.eu" />
+    <meta name="description" content="PaxOnBoard" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="noindex, nofollow" />
+    
+    <title>PaxOnBoard | </title>
+    
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen,projection" />
+    <link href="favicon.ico" rel="icon" />
+
+    <script src="js/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="bgImage0"></div>
+    <div id="bgImage1"></div>
+
+    <script type="text/javascript">
+      function functionshuffle(array)
+      {
+        return array.sort(() =>Math.random() - 0.5);
+      }
+
+      var backgrounds = [
+        "url('images/Midjourney/big/KRtekTM_airport_runway_and_terminal_with_gates_cyberpunk_neon_c_76403daa-dd62-4733-8866-694308094ce1.png') no-repeat center center fixed",  
+        "url('images/Midjourney/big/KRtekTM_airport_runway_and_airport_tower_cyberpunk_neon_colors__a536b300-9c91-4ecd-9d1a-b907877c4fd2.png') no-repeat center center fixed",    
+        "url('images/Midjourney/big/KRtekTM_airplane_landed_on_airport_sunshine_detailed_ultra_real_6250b795-5e40-4c28-805b-2151517b69d9.png') no-repeat center center fixed",
+        "url('images/Midjourney/big/KRtekTM_airplane_landing_on_airport_light_reflections_detailed__88f631c9-bd42-4776-b5c1-65cd51eca7f8.png') no-repeat center center fixed",
+        "url('images/Midjourney/big/KRtekTM_airplane_landing_on_airport_light_reflections_detailed__419dcba5-5057-451b-a45d-352f9ea71726.png') no-repeat center center fixed",
+        "url('images/Midjourney/big/KRtekTM_airplane_landing_on_airport_sunset_detailed_ultra_reali_fe4eafcb-84db-430d-94df-0ea0724c24c6.png') no-repeat center center fixed",
+        "url('images/Midjourney/big/KRtekTM_airport_runway_and_airport_tower_cyberpunk_neon_colors__416492fd-bf51-46ff-ac7e-79c106b54a4a.png') no-repeat center center fixed",
+        "url('images/Midjourney/big/KRtekTM_airport_runway_and_airport_tower_sunrise_rain_water_dro_387b34d2-74f6-41e8-bc72-1ac9c68b83b3.png') no-repeat center center fixed",
+        "url('images/Midjourney/big/KRtekTM_airport_runway_and_airport_tower_sunrise_rain_water_dro_a1de25c4-da53-48f8-9a25-a94c031fdab4.png') no-repeat center center fixed",
+        "url('images/Midjourney/big/KRtekTM_microsoft_flight_simulator_2020_airplane_flying_above_f_863a0aa7-9026-4a95-90e9-cb0b8ce69e68.png') no-repeat center center fixed",
+        "url('images/Midjourney/big/KRtekTM_microsoft_flight_simulator_2020_airplane_flying_above_f_a11ab565-a5a8-4242-a630-0528bbe13075.png') no-repeat center center fixed"];
+      
+      var currentBg = 0;
+      var usedFirstImage = true;
+      $('#bgImage1').fadeOut("fast", function() {});
+
+      $('#bgImage0').css("background", backgrounds[0]);
+      functionshuffle(backgrounds);
+
+      //$(document).ready(function(){
+        setInterval(function(){ 
+          $(usedFirstImage ? '#bgImage1' : '#bgImage0').css("background", backgrounds[currentBg]);
+          $(usedFirstImage ? '#bgImage1' : '#bgImage0').fadeIn(2000); 
+          $(!usedFirstImage ? '#bgImage1' : '#bgImage0').fadeOut(2000, function () {
+              usedFirstImage = !usedFirstImage;
+              if(currentBg == backgrounds.length -1) {
+                currentBg = 0;
+                functionshuffle(backgrounds);
+              }
+              else {
+                currentBg++;
+              }
+          });
+        }, 30000);
+      //});
+    </script>
+
+    <div id="noVisible">
+      <svg viewBox="0 0 48 48" width="48px" height="48px">
+        <symbol id="icon-home" viewBox="0 0 48 48">
+          <path d="M39.5,43h-9c-1.381,0-2.5-1.119-2.5-2.5v-9c0-1.105-0.895-2-2-2h-4c-1.105,0-2,0.895-2,2v9c0,1.381-1.119,2.5-2.5,2.5h-9	C7.119,43,6,41.881,6,40.5V21.413c0-2.299,1.054-4.471,2.859-5.893L23.071,4.321c0.545-0.428,1.313-0.428,1.857,0L39.142,15.52	C40.947,16.942,42,19.113,42,21.411V40.5C42,41.881,40.881,43,39.5,43z"/>
+        </symbol>
+      </svg>     
+    </div>
+
+    <div id="header" class="blurred">
+
+      <p class="menu">
+        <a class="button home" href="index.html">
+          <svg class="Icon">
+            <use href="#icon-home" />
+         </svg>
+        </a>
+        <a class="button" href="#">Download</a>
+        <a class="button" href="#">Community</a>
+      </p>
+      <p class="right">
+        <a href="index.html">
+          <img src="images/paxonboard_logo.svg" />
+        </a>
+      </p>
+    </div>
+
+    <div id="container">
+      <div id="innerContainer" class="blurred">
+        <h1>About PaxOnBoard</h1>
+        <p>
+          Airports are bursting at the seams and need your help to transport passengers.
+        </p>
+        <p>
+          Join the PaxOnBoard community, transport passengers, earn points and become the best pilot!<br />
+          You can also set up your own virtual airline with friends and collect points together.
+        </p>
+        <p>
+          Fly on your own routes or fulfill global orders. As the number of successfully transported passengers increases, more and more lucrative orders will be unlocked.<br />
+        </p>
+        <p>
+          PaxOnBoard is a must-have addition for all MSFS 2020 players who want to experience the atmosphere of a commercial airline pilot.
+        </p>
+      </div>
+    </div>
+
+    <div id="footer" class="blurred">
+      <p>PaxOnBoard for MSFS 2020&emsp;&emsp;<a href="#">Latest stable version: 0.1.0-alpha</a></p>
+      <p class="right"><a href="https://krtkovo.eu/">©2022 Ondrej Kotas</a></p>
+    </div>
+  </body>
+
+</html>

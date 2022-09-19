@@ -1,0 +1,178 @@
+:root {
+    --blue: #00add2;
+    --blurredBorder: rgba(255, 255, 255, 0.1);
+    --blurredBg: rgba(255, 255, 255, 0.2);
+    --textColor: #ffffff;
+    --hoverUrl: #dddddd;
+    --mainBg: #000000;
+    --menuBtnHoverBg: #ffffff;
+    --menuBtnHoverText: #000000;
+    --menuBtnBorder: var(--blue);
+  }
+
+/* latin-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTT0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSj0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background: var(--mainBg);
+}
+
+a:link, a:visited, a:hover {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#bgImage0, #bgImage1 {
+    background: url("images/Midjourney/big/KRtekTM_airport_runway_and_terminal_with_gates_cyberpunk_neon_c_76403daa-dd62-4733-8866-694308094ce1.png") no-repeat center center fixed; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div.blurred {
+    backdrop-filter: blur(15px);
+    background: var(--blurredBg);
+    color: var(--textColor);
+}
+
+#header {
+    border: solid 6px var(--blurredBorder);
+    width: calc(100% - 12px);
+    height: 64px;
+}
+
+#header p.menu {
+    margin: 0 0 0 1em;
+    padding: 0;
+    font-weight: 600;
+}
+
+#header p.right {
+    line-height: 64px;
+    margin: -64px 0 0 1em;
+    height: 64px;
+}
+
+#header a.button {
+    display: inline-block;
+    height: 56px;
+    padding: 0 12px 0 12px;
+    margin: 0 6px 0 6px;
+    border-bottom: solid 8px var(--menuBtnBorder);
+    text-transform: uppercase;
+    line-height: 85px;
+}
+#header a.button:not([class*="home"]) {
+    min-width: 200px;
+}
+#header a.button:hover {
+    text-decoration: none;
+    color: var(--menuBtnHoverText);
+    background: var(--menuBtnHoverBg);
+    border-bottom: solid 8px var(--menuBtnHoverBg);
+}
+#header a.home:hover {
+    fill: var(--menuBtnHoverText);
+}
+#header a.home {
+    text-align: center;
+    fill: var(--textColor);
+}
+#header a.home svg {
+    height: 20pt;
+    width: 20pt;
+    margin-bottom: -5px;
+}
+
+#container {
+    margin: 3em auto;
+    height: calc(100vh - 64px - 12px - 54px - 12px - 6em - 12px); /* 100 window height - header height - header border - footer height - footer border - container margin - container border */
+    max-width: 1600px;
+    padding: 0 3em 0 3em;
+}
+
+#innerContainer {
+    border: solid 6px var(--blurredBorder);
+    height: calc(100% - 4em);
+    padding: 2em;
+    /*text-transform: uppercase;*/
+    font-weight: 400;
+}
+
+#innerContainer h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+#footer {
+    border: solid 6px var(--blurredBorder);
+    width: calc(100% - 12px);
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#footer p {
+    text-transform: uppercase;
+    line-height: 54px;
+    margin: 0 1em 0 1em;
+    padding: 0;
+    font-weight: 600;
+}
+
+#footer p.right {
+    margin-top: -54px;
+}
+
+#footer a:link, #footer a:visited, #header a:link, #header a:visited {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+#footer a:hover {
+    text-decoration: none;
+    color: var(--hoverUrl);
+}
+
+.right {
+    text-align: right;
+}
+
+#noVisible {
+    height: 0; width: 0; position: absolute; visibility: hidden;
+}
