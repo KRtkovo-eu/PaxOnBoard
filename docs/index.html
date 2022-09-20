@@ -18,6 +18,10 @@
   </head>
 
   <body>
+    <audio id="audioHover" src="sounds/hover.wav"></audio>
+    <audio id="audioSelect" src="sounds/select.wav"></audio>
+    <audio id="audioMenu" src="sounds/menu.wav"></audio>
+    <audio id="audioReturn" src="sounds/back.wav"></audio>
     <div id="bgImage0"></div>
     <div id="bgImage1"></div>
 
@@ -87,15 +91,15 @@
     <div id="header" class="blurred">
 
       <p class="menu">
-        <a class="button home active" href="/">
+        <a class="button home active sound" href="/">
           <svg class="Icon">
             <use href="#icon-home" />
           </svg>
         </a>
-        <a class="button" href="#">
+        <a class="button sound" href="#">
           Download
         </a>
-        <a class="button" href="#">
+        <a class="button sound" href="#">
           Community
         </a>
       </p>
@@ -137,9 +141,38 @@
     </div>
 
     <div id="footer" class="blurred">
-      <p>PaxOnBoard for MSFS 2020&emsp;&emsp;<a href="#">Latest stable version: none</a></p>
-      <p class="right"><a href="https://krtkovo.eu/">©2022 KRtkovo.eu</a></p>
+      <p>PaxOnBoard for MSFS 2020&emsp;&emsp;<a href="#" class="sound">Latest stable version: none</a></p>
+      <p class="right"><a href="https://krtkovo.eu/" class="sound">©2022 KRtkovo.eu</a></p>
     </div>
+
+    <script type="text/javascript">
+      var audioHover = document.getElementById("audioHover");
+      var audioSelect = document.getElementById("audioSelect");
+      var audioMenu = document.getElementById("audioMenu");
+      var audioReturn = document.getElementById("audioReturn");
+
+      function playHoverSound() {
+        audioHover.play();
+      }
+      function playSelectSound() {
+        audioSelect.play();
+      }
+      function playMenuClickSound() {
+        audioMenu.play();
+      }
+      function playReturnSound() {
+        audioReturn.play();
+      }
+    
+      $(document).ready(function(){
+        $("a.sound").hover(function() {
+          playHoverSound();
+        });
+        $("a.sound.button").on("onclick", function() {
+          playMenuClickSound();
+        });
+      });
+    </script>
   </body>
 
 </html>
