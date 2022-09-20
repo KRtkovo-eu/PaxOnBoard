@@ -1,14 +1,38 @@
 :root {
-    --blue: #00add2;
+    --blue: #00b4ff;
+    --transparent: rgba(0, 0, 0, 0);
     --blurredBorder: rgba(255, 255, 255, 0.1);
     --blurredBg: rgba(255, 255, 255, 0.2);
-    --textColor: #ffffff;
-    --hoverUrl: #dddddd;
-    --mainBg: #000000;
-    --menuBtnHoverBg: #ffffff;
-    --menuBtnHoverText: #000000;
+    --textColor: #fff;
+    --hoverUrl: var(--blue);
+    --mainBg: #000;
+    --menuBtnHoverBg: #fff;
+    --menuBtnHoverText: var(--blue);
     --menuBtnBorder: var(--blue);
+    --menuBtnActiveText: #2f2f2f;
   }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    cursor:pointer;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+    cursor: pointer;
+}
 
 /* latin-ext */
 @font-face {
@@ -85,27 +109,39 @@ div.blurred {
     margin: -64px 0 0 1em;
     height: 64px;
 }
+#headerLogo {
+    margin: 16px;
+    height: 32px;
+    fill: var(--textColor);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+#headerLogo:hover {
+    fill: var(--hoverUrl);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
 
 #header a.button {
     display: inline-block;
-    height: 56px;
+    height: 64px;
     padding: 0 12px 0 12px;
     margin: 0 6px 0 6px;
-    border-bottom: solid 8px var(--menuBtnBorder);
     text-transform: uppercase;
     line-height: 85px;
-}
-#header a.button:not([class*="home"]) {
-    min-width: 200px;
-}
-#header a.button:hover {
-    text-decoration: none;
-    color: var(--menuBtnHoverText);
-    background: var(--menuBtnHoverBg);
-    border-bottom: solid 8px var(--menuBtnHoverBg);
-}
-#header a.home:hover {
-    fill: var(--menuBtnHoverText);
+    position: relative;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, var(--transparent) 50%, var(--menuBtnBorder) 50%);
+
+    -webkit-transition: background-position .5s, color .2s, fill .2s;
+    -moz-transition: background-position .5s, color .2s, fill .2s;
+    transition: background-position .5s, color .2s, fill .2s;
+
+    background-position: 0% 12.5%;
 }
 #header a.home {
     text-align: center;
@@ -116,11 +152,29 @@ div.blurred {
     width: 20pt;
     margin-bottom: -5px;
 }
+#header a.button:not([class*="home"]) {
+    min-width: 200px;
+}
+#header a:link, #header a:visited {
+    text-decoration: none;
+    color: var(--textColor);
+}
+#header a.button:hover, #header a.home:hover, #header a.active {
+    text-decoration: none;
+    color: var(--menuBtnHoverText);
+    fill: var(--menuBtnHoverText);
+    background-image: linear-gradient(to bottom, var(--transparent) 50%, var(--menuBtnHoverBg) 50%);
+    background-position: 0% 100%;
+}
+#header a.active {
+    color: var(--menuBtnActiveText);
+    fill: var(--menuBtnActiveText);
+}
+
 
 #container {
     margin: 3em auto;
     height: calc(100vh - 64px - 12px - 54px - 12px - 6em - 12px); /* 100 window height - header height - header border - footer height - footer border - container margin - container border */
-    max-width: 1600px;
     padding: 0 3em 0 3em;
 }
 
@@ -130,6 +184,7 @@ div.blurred {
     padding: 2em;
     /*text-transform: uppercase;*/
     font-weight: 400;
+    overflow-y: auto;
 }
 
 #innerContainer h1 {
@@ -163,7 +218,7 @@ div.blurred {
     margin-top: -54px;
 }
 
-#footer a:link, #footer a:visited, #header a:link, #header a:visited {
+#footer a:link, #footer a:visited {
     text-decoration: none;
     color: var(--textColor);
 }
